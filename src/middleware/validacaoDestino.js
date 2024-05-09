@@ -5,7 +5,7 @@ const schema = yup.object({
     descricao:yup.string().required(),
     localidade:yup.string().required(),
     coordenadas_geograficas:yup.number().required(),
-    usuario_id:yup.number().integer().required()
+    // usuario_id:yup.number().integer().required()
 })
 
 const validacaoDestino= async(req,res,next)=>{
