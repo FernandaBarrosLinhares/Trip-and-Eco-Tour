@@ -11,6 +11,6 @@ destinoRoutes.post('/',auth,validacaoDestino ,DestinoController.cadastrar)
 
 destinoRoutes.get('/', auth, DestinoController.listar)
 
-
+destinoRoutes.get('/:id', auth, DestinoController.listarUmDestino)
 
 module.exports = destinoRoutes 
