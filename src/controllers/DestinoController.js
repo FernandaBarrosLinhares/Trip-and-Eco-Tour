@@ -45,6 +45,28 @@ class DestinoController{
             return res.status(500).json({ error: 'Erro interno no servidor' });
         }
     }
+
+    async listarUmDestino(req,res) {
+        try {
+
+            const { id } = req.params
+    
+            const destino = await Destino.findByPk(id)
+    
+            if (!destino) {
+                return res.status(404).json({ message: "Destino não encontrado!" })
+            }
+    
+            res.json(destino)
+    
+        } catch (error) {
+            console.log(error.message)
+            res.status(500).json({
+                error: 'Não possível listar o destino especifico',
+                error: error
+            })
+        }
+    }
 }
 
 
