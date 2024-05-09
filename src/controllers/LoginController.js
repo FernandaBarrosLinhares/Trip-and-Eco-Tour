@@ -1,5 +1,7 @@
 const Usuario = require('../models/Usuario');
 const {sign} = require('jsonwebtoken');
+const yup = require('yup');
+const {auth} = require('../middleware/auth');
 
 class LoginController{
     async login(req, res){
