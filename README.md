@@ -8,7 +8,7 @@ Os usuários podem explorar e descobrir novos destinos, encontrar dicas de viage
 
 ## Tecnologia ultilizadas
 
-O sistema foi desenvolvido utilizando Node, PostgreSQL e Sequelize e  Banco de Dados Relacional
+O sistema foi desenvolvido utilizando Node, PostgreSQL como Banco de Dados Relacional
 
 ## Como rodar o projeto
 
@@ -43,6 +43,7 @@ https://sequelize.org/docs/v6/core-concepts/model-basics/
 `npm install jsonwebtoken`
 ## instalar o yúp
 `npm install yup --save`
+
 
 
 
