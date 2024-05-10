@@ -10,6 +10,16 @@ class UsuarioController{
             if(!nome || !sexo || !cpf || !email || !senha || !data_nascimento ||!endereco) {
                 return res.status(400).json({messagem:'Dados obrigatórios'})
             }
+            const cpf_unique = await Usuario.findOne({where:{cpf:cpf}})    
+        
+            if(cpf_unique){
+                return res.status(409).json({})
+            }   
+            const email_unique = await Usuario.findOne({where:{email:email}})    
+            
+            if(email_unique){
+                return res.status(409).json({})
+            }  
     
             const usuario = await Usuario.create({
                 nome,
