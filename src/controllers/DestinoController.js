@@ -46,25 +46,28 @@ class DestinoController{
         }
     }
 
-    async listarUmDestino(req,res) {
+    async listarUmDestino(req, res) {
         try {
-
-            const { id } = req.params
+            const usuario_id_autenticado = req.payload ? req.payload.sub : null;
+            console.log(usuario_id_autenticado);
+            const { id } = req.params;
     
-            const destino = await Destino.findByPk(id)
-    
+            const destino = await Destino.findByPk(id);
+            console.log(destino);
+            
             if (!destino) {
-                return res.status(404).json({ message: "Destino não encontrado!" })
+                return res.status(404).json({ message: "Destino não encontrado" });
+            }
+
+            if (usuario_id_autenticado !== destino.usuario_id) {
+                return res.status(401).json({ message: "Acesso negado" });
             }
     
-            res.json(destino)
+            return res.status(200).json(destino);
     
         } catch (error) {
-            console.log(error.message)
-            res.status(500).json({
-                error: 'Não possível listar o destino especifico',
-                error: error
-            })
+            console.error(error.message);
+            res.status(500).json({ error: 'Não foi possível listar o destino especifico' });
         }
     }
 }
