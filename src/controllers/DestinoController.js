@@ -70,6 +70,53 @@ class DestinoController{
             res.status(500).json({ error: 'Não foi possível listar o destino especifico' });
         }
     }
+    async atualizarDestino(req,res){
+        try {
+            const {id}= req.params;
+            const usuario_id_autenticados = req.payload ? req.payload.sub : null;
+            const {nome,descricao,localidade, coordenadas_geograficas} = req.body;
+
+            const destino = await Destino.findByPk(id);
+
+            if(!destino){
+                return res.status(404).json({ message: "Destino não encontrado" });
+            }
+            if(usuario_id_autenticados !== destino.usuario_id){
+                return res.status(401).json({ message: "Acesso negado" });
+            }
+            await destino.update({ nome, descricao, localidade, coordenadas_geograficas });
+
+            return res.status(200).json(destino);
+
+
+        } catch (error) {
+            console.error(error.message);
+            res.status(500).json({ error: 'Erro interno no servidor' });
+        }
+    }
+    async deletarDestino(req, res) {
+        try {
+            const { id } = req.params;
+            const usuario_id_autenticado = req.payload ? req.payload.sub : null;
+
+            const destino = await Destino.findByPk(id);
+
+            if (!destino) {
+                return res.status(404).json({ message: "Destino não encontrado" });
+            }
+
+            if (usuario_id_autenticado !== destino.usuario_id) {
+                return res.status(401).json({ message: "Acesso negado" });
+            }
+
+            await destino.destroy();
+
+            return res.status(204).send();
+        } catch (error) {
+            console.error(error.message);
+            res.status(500).json({ error: 'Erro interno no servidor' });
+        }
+    }
 }
 
 

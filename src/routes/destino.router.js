@@ -13,4 +13,8 @@ destinoRoutes.get('/', auth, DestinoController.listar)
 
 destinoRoutes.get('/:id', auth, DestinoController.listarUmDestino)
 
+destinoRoutes.put('/:id', auth, DestinoController.atualizarDestino);
+
+destinoRoutes.delete('/:id', auth, DestinoController.deletarDestino)
+
 module.exports = destinoRoutes 
