@@ -8,7 +8,7 @@ Os usuários podem explorar e descobrir novos destinos, encontrar dicas de viage
 
 ## Tecnologia ultilizadas
 
-O sistema foi desenvolvido utilizando Node, PostgreSQL como Banco de Dados Relacional
+O sistema foi desenvolvido utilizando Node, Express PostgreSQL como Banco de Dados Relacional
 
 ## Como rodar o projeto
 
@@ -23,8 +23,11 @@ https://github.com/FernandaBarrosLinhares/Trip-and-Eco-Tour
 2. Se for em ambiente local: `npm install --dev`
 3. `cp .env_example .env`
 
-### Para rodar o repositório em ambiente local
-1. `npm run start:dev`
+### Para ter valores iniciais no Banco de dados usando seeders:
+
+`sequelize db:seed:all`
+`npx sequelize db:seed:all`
+
 
 ## Documentação do Sequelize:
 https://sequelize.org/docs/v6/core-concepts/model-basics/
@@ -51,15 +54,16 @@ Para acessar a documentação completa das rotas acesse o link:
 `npm install yup --save`
 
 ### Melhorias a serem aplicadas
-1.Separa a tabela de endereço
-2.Criar novas tabelas que estentem de locais segmentando por tipo: atrativo, hospedagem, alimentação. 
-2.Fazer consumo de mapas 
-3.Criar os papéis obtendo permissionamento para outros tipos de ususarios.
+1.Separa a tabela de endereço e fazer consumo via cep.
+2.Criar novas tabelas por tipos de desctinos: atrativo, hospedagem, alimentação. 
+3.Fazer consumo de mapas 
+4.Criar ENUM em sexo
+5.Criar os papéis obtendo permissionamento para outros tipos de ususarios como administradores e demais usuarios de outros segmentos.
 
 
 ## Desenvolvedora
 
-- Fernanda Linhares (https://github.com/FernandaBarrosLinhares)
+- Fernanda Linhares (https://www.linkedin.com/in/fernanda-linhares-b10ba32b/)
 
 
 
