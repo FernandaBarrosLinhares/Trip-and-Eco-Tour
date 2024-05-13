@@ -10,7 +10,7 @@ const schema = yup.object({
     endereco:yup.string().required(),
 });
 const validacaoUsuarios = async(req, res, next)=>{
-    const {body} = req;
+    const body = req.body;
 
     try {
        

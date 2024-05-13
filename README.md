@@ -29,6 +29,12 @@ https://github.com/FernandaBarrosLinhares/Trip-and-Eco-Tour
 ## Documentação do Sequelize:
 https://sequelize.org/docs/v6/core-concepts/model-basics/
 
+## EndPoints
+
+Para acessar a documentação completa das rotas acesse o link: 
+|{http://localhost:3005/docs/}|
+
+
 ## Bibliotecas utilizadas:
 
 ### Sequelize
@@ -43,6 +49,18 @@ https://sequelize.org/docs/v6/core-concepts/model-basics/
 `npm install jsonwebtoken`
 ## instalar o yúp
 `npm install yup --save`
+
+### Melhorias a serem aplicadas
+1.Separa a tabela de endereço
+2.Criar novas tabelas que estentem de locais segmentando por tipo: atrativo, hospedagem, alimentação. 
+2.Fazer consumo de mapas 
+3.Criar os papéis obtendo permissionamento para outros tipos de ususarios.
+
+
+## Desenvolvedora
+
+- Fernanda Linhares (https://github.com/FernandaBarrosLinhares)
+
 
 
 

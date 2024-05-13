@@ -49,7 +49,6 @@ class DestinoController{
     async listarUmDestino(req, res) {
         try {
             const usuario_id_autenticado = req.payload ? req.payload.sub : null;
-            console.log(usuario_id_autenticado);
             const { id } = req.params;
     
             const destino = await Destino.findByPk(id);

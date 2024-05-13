@@ -1,13 +1,14 @@
 const swaggerAutogen =require('swagger-autogen')();
-
+const {config} = require('dotenv')
+config()
 
 const doc ={
     info:{
         title:"Trip and Tour",
-        description: "Uma api de exemplo basico",
+        description: "O Viagem365 é uma plataforma que visa promover viagens sustentáveis e experiências positivas para os usuários",
         version: "1.0.0"
     },
-    host: 'localhost:3000',
+    host: `localhost:${process.env.PORT_API}`,
     security: [{"apiKeyAuth":[]}],
     securityDefinitions: {
         apiKeyAuth: {
