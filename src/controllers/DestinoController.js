@@ -1,5 +1,6 @@
 const Destino = require('../models/Destino');
 const Usuario = require('../models/Usuario');
+// const axios = require('axios');
 
 class DestinoController{
     async cadastrar(req,res){
@@ -9,11 +10,24 @@ class DestinoController{
         
             if(!nome || !descricao || !localidade || !coordenadas_geograficas)
                 return res.status(400).json({messagem:'Dados obrigatórios'})
+
+            // const cep = req.body.localidade
+            // const response = await axios.get(`https://nominatim.openstreetmap.org/search?format=json&postalcode=${cep}&country=Brazil&limit=1`);
+            // let dadosApi = null;
+            // if(response.data && response.data.length > 0){
+            //      dadosApi = response.data[0].display_name
+            // }
+            // const destino = Destino.findbyPk(id)
+            // chamada pra api...
+            // destino.lat = resposntaAPI.lat
+            // destino.lon = respostaAPI.lon
+return res.status(200).json(destino)
         
             const destino = await   Destino.create({
                 nome,
                 descricao,
                 localidade,
+                // localidade:dadosApi,
                 coordenadas_geograficas,
                 usuario_id,
                 
