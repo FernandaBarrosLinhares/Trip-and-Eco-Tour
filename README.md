@@ -54,7 +54,7 @@ Para acessar a documentação completa das rotas acesse o link:
 `npm install yup --save`
 
 ### Melhorias a serem aplicadas
-1.Separa a tabela de endereço e fazer consumo via cep.
+1.Separar a tabela de endereço e fazer consumo via cep.
 2.Criar novas tabelas por tipos de desctinos: atrativo, hospedagem, alimentação. 
 3.Fazer consumo de mapas 
 4.Criar ENUM em sexo

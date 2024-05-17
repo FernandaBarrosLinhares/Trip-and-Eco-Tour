@@ -19,11 +19,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-     //  //TODO:enum
-    //  sexo:{
-    //   allowNull: false,
-    //   type: Sequelize.ENUM('Femino','Masculino')
-    // },
 
       cpf:{
         allowNull: false,
@@ -46,17 +41,6 @@ module.exports = {
         type:Sequelize.STRING
       },
 
-      //TODO depois que funcionar quero separar endereco pois faz mais sentido
-      // endereco_id: {
-      //   allowNull: false,
-      //   type: Sequelize.INTEGER,
-      //   references: {
-      //     model: 'enderecos',
-      //     key: 'id'
-      //   },
-      //   onUpdate: 'CASCADE',
-      //   onDelete: 'CASCADE'
-      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
