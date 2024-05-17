@@ -36,7 +36,6 @@ class DestinoController{
                 return res.status(404).json({message:'Ususario não esta logado'})
             }
              const lista_destinos = await Destino.findAll({where:{usuario_id:usuario_id_autenticado}});
-             console.log(lista_destinos)
              return res.status(200).json({lista_destinos})
     
      
@@ -52,7 +51,7 @@ class DestinoController{
             const { id } = req.params;
     
             const destino = await Destino.findByPk(id);
-            console.log(destino);
+            
             
             if (!destino) {
                 return res.status(404).json({ message: "Destino não encontrado" });

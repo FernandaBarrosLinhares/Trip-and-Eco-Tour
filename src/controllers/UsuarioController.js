@@ -20,6 +20,9 @@ class UsuarioController{
             if(email_unique){
                 return res.status(409).json({})
             }  
+            if (!data_nascimento.match(/\d{4}-\d{2}-\d{2}/gm)) {
+                return res.status(400).json({ message: 'A data de nascimento é não está no formato correto' })
+            }
     
             const usuario = await Usuario.create({
                 nome,
